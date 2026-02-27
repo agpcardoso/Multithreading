@@ -10,4 +10,4 @@ RUN dotnet publish -c Release -o /out
 FROM base AS final
 WORKDIR /app
 COPY --from=build /out .
-ENTRYPOINT ["dotnet", "SantanderTest.dll"]
+ENTRYPOINT ["dotnet", "Multithreading.dll"]
