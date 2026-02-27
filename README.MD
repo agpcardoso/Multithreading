@@ -37,7 +37,7 @@ No additional local setup is required.
 
 ## How to Run the Application
 
-1. Open a terminal in the **root folder of the project** (where the `docker-compose.yml` file is located).
+1. Open a terminal in the **src folder** (where the `docker-compose.yml` file is located).
 
 2. Run the application using:
 
