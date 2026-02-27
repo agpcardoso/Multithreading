@@ -40,5 +40,36 @@ No additional local setup is required.
 1. Open a terminal in the **src folder** (where the `docker-compose.yml` file is located).
 
 2. Run the application using:
-
 docker compose up --build
+
+3. Wait until all containers are fully started.
+
+---
+
+## Running and Testing the API
+After the application is running, open your browser and navigate to the Swagger interface:
+http://localhost:8080/swagger/index.html
+
+
+Swagger provides an interactive interface where you can explore and test the available endpoints.
+
+To retrieve the best Hacker News stories, use the following endpoint:
+http://localhost:8080/api/beststories
+
+You must provide the `amount` query parameter to specify how many stories should be returned.
+
+### Example:
+http://localhost:8080/api/beststories?amount=10
+
+This request will return the top 10 best stories currently available on Hacker News.
+---
+
+##  How It Works 
+
+1. The API receives the requested number of stories (`amount`).
+2. It calls the Hacker News public API asynchronously.
+3. Multiple story details are fetched concurrently.
+4. The results are processed and returned in a structured format.
+5. Redis may be used to improve performance and reduce repeated external calls.
+
+This design demonstrates handling of I/O-bound operations using asynchronous programming patterns.
